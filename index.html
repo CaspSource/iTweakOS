@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="https://onuniverse-assets.imgix.net/1438B68A-054C-4B70-AE1F-1ADCF58B7787.jpg?q=75&dpr=1.25" type="image/gif" sizes="16x16">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+<title>iTweakOS</title>
+<head>
+<style>
+
+body{
+  margin:0px;
+  background-color:#222222;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a {
+  color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 0.8em;
+  color: rgba(255,255,255,0.2);}
+a {
+    background: #fd264f;
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0;
+    padding: 5px 110px;
+    position: fixed;
+    top: 20px;
+    right: -100px;
+    text-align: center;
+    text-decoration: none;
+    transform: rotate(45deg);
+}
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; }
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #efedef;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    height:2px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid #fd264f; border-radius:0px; height:2px; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #fd264f; border-radius:0px; height:2px; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+
+      #loading{
+      	background-color: #59631e;
+      	height: 100%;
+      	width: 100%;
+      	position: fixed;
+      	z-index: 1;
+      	margin-top: 0px;
+      	top: 0px;
+      }
+      #loading-center{
+      	width: 100%;
+      	height: 100%;
+      	position: relative;
+      	}
+      #loading-center-absolute {
+      	position: absolute;
+      	left: 50%;
+      	top: 50%;
+      	height: 100px;
+      	width: 50px;
+      	margin-top: -50px;
+      	margin-left: -25px;
+      }
+      .object{
+      	width: 50px;
+      	height: 8px;
+      	margin-bottom:15px;
+      	background-color: #FFF;
+      	-webkit-animation: animate 0.8s infinite;
+      	animation: animate 0.8s infinite;
+      	}
+
+      #object_two {
+      	-webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+
+      	}
+
+
+      #object_four {
+      	-webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+      	}
+
+
+      @-webkit-keyframes animate {
+
+        50% {
+      	-ms-transform: translate(50%,0);
+         	-webkit-transform: translate(50%,0);
+          transform: translate(50%,0);
+      	  }
+
+
+
+
+      }
+
+      @keyframes animate {
+        50% {
+      	-ms-transform: translate(50%,0);
+         	-webkit-transform: translate(50%,0);
+          transform: translate(50%,0);
+      	  }
+
+
+      }
+
+      .slider{
+        display:flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling:touch;
+      }
+
+      .slider div{
+        flex-shrink:0;
+        width:65px;
+        height:65px;
+      }
+
+</style>
+</head>
+<body>
+
+
+
+  <h5 style="font-family:arial;margin-left:17px;font-size:12px;">
+      <script>
+      					                                                 var mydate=new Date()
+      					                                                 var year=mydate.getYear()
+      					                                                 var day=mydate.getDay()
+      					                                                 var month=mydate.getMonth()
+      					                                                 var daym=mydate.getDate()
+      					                                                 if (daym<10)
+      					                                                   daym="0"+daym
+      					                                                 var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+      					                                                 var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+      					                                                 document.write("<font color='f2f2f2'>"+dayarray[day]+", "+montharray[month]+" "+daym+"<\/font>")
+      </script>
+  <font  color="f2f2f2" class></font>
+    </h5>
+
+<h1 style="font-family:arial;font-size:30px;color:#ffffff;margin-left:17px">iTweakOS</h1>
+
+<div class="tabs">
+  <div class="tab-2">
+    <label style="font-family:arial;" for="tab2-1">Home</label>
+    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+    <div>
+      <div class="slider">
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/nothx.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://cdn.tweakboxapp.com/icons/nothx.png"></img></span></div>
+
+                <div><span onclick="location='itms-services://?action=download-manifest&amp;url=https://caspia.000webhostapp.com/plists/spotifyblue.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://ipabox.store/icons/spotifyblue.png"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/cutecutpro.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="http://is2.mzstatic.com/image/thumb/Purple118/v4/03/70/69/03706968-2399-a1d8-e7c4-12897394ead9/source/512x512bb.jpg"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/netflixchecker.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://ipas.fun/images/netflixchecker.png"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/himusic.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://cdn.tweakboxapp.com/icons/himusic.png"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/electramp.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://cdn.tweakboxapp.com/icons/electra.png"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/speedtest.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://store-images.s-microsoft.com/image/apps.17557.13510798887693184.f17a0156-31bb-4cd8-a528-bce93ba02099.a38af496-4d9b-4831-828e-f942c6126042?mode=crop&q=90&h=270&w=270&format=jpg&background=%23000000"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/musical.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://is2-ssl.mzstatic.com/image/thumb/Purple125/v4/dd/d8/9f/ddd89fcf-f94d-eea6-4daf-a79512d9165d/W__AppIcon-1x_U007emarketing-85-220-0-5.png/128x128.png"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/pubg.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="http://lh3.googleusercontent.com/VpoWDgQ2I_RlTNM1Srlo5Q0VQglr-gdbzJ48TwYRXM2U4iF75PMrv76rBiu5c3l1UJs=w300"></img></span></div>
+
+                <div><span onclick="location='itms-services:///?action=download-manifest&url=https://caspia.000webhostapp.com/plists/yt.plist'"><img style="width:50px;border-radius:10px;margin:5px;" src="https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/a0/dc/f7/a0dcf783-e671-8b3c-4fe8-00c0c16ab5d3/source/512x512bb.jpg"></img></span></div>
+</div>
+<br>
+<center>
+  <h2 style="font-family:arial;font-size:15px;color:white;">Featured</h2>
+</center>
+<div class="slider">
+
+          <div><span onclick="location='https://www.youtube.com/thehackspot'"><img style="width:50px;border-radius:50%;margin:5px;" src="https://pbs.twimg.com/profile_images/926736271866716160/cyj7SaTt_400x400.jpg"></img></span></div>
+
+          <div><span onclick="location='https://www.youtube.com/channel/UCDk6ThShbn-CYSCGz9R_iaA?app=desktop'"><img style="width:50px;border-radius:50%;margin:5px;" src="https://pbs.twimg.com/profile_images/1022344271523926017/-eOj1vqG_400x400.jpg"></img></span></div>
+
+          <div><span onclick="location='https://www.youtube.com/c/AppleProX75'"><img style="width:50px;border-radius:50%;margin:5px;" src="https://pbs.twimg.com/profile_images/1029919177564246016/y-ijNR9w_400x400.jpg"></img></span></div>
+
+          <div><span onclick="location='https://www.youtube.com/user/TheNightmaresslayer'"><img style="width:50px;border-radius:50%;margin:5px;" src="https://yt3.ggpht.com/a-/AN66SAy-6wmivdoEGpMxC-hfQSBKE6y9Qy7uwB_zTA=s288-mo-c-c0xffffffff-rj-k-no"></img></span></div>
+
+      </div>
+<br>
+<center>
+<h2 style="font-family:arial;font-size:15px;color:white;">YouTubers</h2>
+</center>
+<center>
+<h2 style="border-bottom:solid;border-bottom-color:#ff0000;"></h2>
+</center>
+<center>
+<img style="width:100px;border-radius:50%;" src="https://onuniverse-assets.imgix.net/1438B68A-054C-4B70-AE1F-1ADCF58B7787.jpg?q=75&dpr=1.25"></img>
+</center>
+<center>
+  <h2 style="font-family:arial;font-size:15px;color:white;">What's This?</h2>
+</center>
+<center>
+  <p style="font-family:arial;font-size:12px;color:white;width:60%;">This app is a 3rd party AppStore where you can install many apps that you would not be able to get on the main iOS Appstore.</p>
+</center>
+<center>
+<h2 style="border-bottom:solid;border-bottom-color:#ff0000;"></h2>
+</center>
+<br>
+<center>
+  <span onclick="window.open('https://twitter.com/iPABoxApp')">
+<img style="width:100px;border-radius:50%;" src="https://pbs.twimg.com/profile_images/946406176618635264/ZtHCK8WF_400x400.jpg"></img>
+</center>
+<center>
+  <h2 style="font-family:arial;font-size:15px;color:white;">Special Thanks</h2>
+</center>
+<center>
+  <p style="font-family:arial;font-size:12px;color:white;width:60%;">iPA Box is an amazing 3rd party appstore and they let me use all of their signed iPA files for my Cydia Alternative and I am really greatful for that! I have become great friends with the creator of it and he is able to sign iPAs whenever I need one done for example I asked for him to sign the Electra Remover that nobody had on their apps before he signed it! Thanks again Dani you are the best!</p>
+</center>
+</span>
+<center>
+<h2 style="border-bottom:solid;border-bottom-color:#ff0000;"></h2>
+<br>
+<center>
+<img style="width:100px;border-radius:50%;" src="https://onuniverse-assets.imgix.net/3C619019-D35A-4B7D-A95F-1405F1FF3B46.jpg?q=75&dpr=1.25"></img>
+</center>
+<center>
+  <h2 style="font-family:arial;font-size:15px;color:white;">Support Me</h2>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="window.open='http://caspxd.org'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://onuniverse-assets.imgix.net/3C619019-D35A-4B7D-A95F-1405F1FF3B46.jpg?q=75&dpr=1.25">Other Projects</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">CaspXD</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="window.open='http://caspxd.org/merch.html'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://onuniverse-assets.imgix.net/3C619019-D35A-4B7D-A95F-1405F1FF3B46.jpg?q=75&dpr=1.25">Merch</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">CaspXD</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="window.open='http://paypal.me/WinterBagley'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/1a/d9/ae/1ad9aef5-e53f-e09a-5715-216c318d72df/AppIcon-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-4.png/246x0w.jpg">Donate</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Paypal</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="window.open='http://twitter.com/CaspYT'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://lh3.googleusercontent.com/U2H5O-RNxa4OQKByVCdiqlASgXPvEg5EWx_E8IWWrdROOAetGa4SN-u4YNcnjSHakCCh">Twitter</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Follow</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="window.open='http://youtube.com/c/casp9v'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/74/33/bd/7433bd55-ff16-d038-fc9b-826687e70d72/AppIcon-1x_U007emarketing-85-220-0-6.png/246x0w.jpg">YouTube</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Subscribe</p>
+</span>
+</div>
+</center>
+<center>
+<h2 style="border-bottom:solid;border-bottom-color:#ff0000;"></h2>
+</center>
+    </div>
+  </div>
+  <div class="tab-2">
+    <label style="font-family:arial;" for="tab2-2">Apps</label>
+    <input id="tab2-2" name="tabs-two" type="radio">
+    <div>
+      <center>
+  <div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+  <span
+     onclick="location='appstore.html'">
+  <h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+  <img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/AppStore_new_logo.svg/2000px-AppStore_new_logo.svg.png">Appstore Apps</h1>
+  <p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Paid Apps</p>
+  </span>
+  </div>
+  </center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="location='itweakos.html'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://onuniverse-assets.imgix.net/1438B68A-054C-4B70-AE1F-1ADCF58B7787.jpg?q=75&dpr=1.25">iTweakOS Apps</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Amazing Apps</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="location='tweaked.html'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://t2.uc.ltmcdn.com/images/5/8/9/img_como_eliminar_spotify_de_mi_cronologia_de_facebook_3985_600.jpg">Tweaked Apps</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Modified Apps</p>
+</span>
+</div>
+</center>
+<center>
+<div style="margin:10px;text-align: justify;width:100%;background-color:#222222;padding:5px;">
+<span
+onclick="location='hacked.html'">
+<h1 style="margin-left:5%;margin-top:10px;font-family:arial;font-size:15px;color:#ffffff;text-decoration:none;"  >
+<img  style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-right:10px; width:40px;border-radius:20%;" align="left" src="https://c1.staticflickr.com/2/1739/27525455217_56ebe6e422_c.jpg">Hacked Games</h1>
+<p style="margin-left:15%;margin-top:4px;font-family:arial;font-size:12px;color:#f2f2f2;text-decoration:none;">Tweaked Games</p>
+</span>
+</div>
+</center>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+var iWebkit;if(!iWebkit){iWebkit=window.onload=function(){function fullscreen(){var a=document.getElementsByTagName("a");for(var i=0;i<a.length;i++){if(a[i].className.match("noeffect")){}else{a[i].onclick=function(){window.location=this.getAttribute("href");return false}}}}function hideURLbar(){window.scrollTo(0,0.9)}iWebkit.init=function(){fullscreen();hideURLbar()};iWebkit.init()}}
+</script>
